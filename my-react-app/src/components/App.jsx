@@ -3,15 +3,7 @@ import React from "react";
 import TermCard from "./TermCard";
 import emojipedia from "../emojipedia";
 
-function createNewTermCard(item){
-    return(
-        <TermCard
-        emoji={item.emoji}
-        name={item.name}
-        meaning={item.meaning}
-        />
-    )
-}
+
 
 function App() {
   return (
@@ -21,8 +13,13 @@ function App() {
       </h1>
 
       <dl className="dictionary">
-        {emojipedia.map(createNewTermCard)}
-    
+        {emojipedia.map((item) => (
+          <TermCard
+            emoji={item.emoji}
+            name={item.name}
+            meaning={item.meaning}
+          />
+        ))}
       </dl>
     </div>
   );
